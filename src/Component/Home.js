@@ -1,120 +1,144 @@
 import React from "react";
 
 const CommentThread = () => {
-  const comments = [
-    {
-      id: 1,
-      user: "Rodrickjesferhadley",
-      time: "2 hr ago",
-      text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.",
-      replies: [
-        {
-          id: 11,
-          user: "Rodrickjesferhadley",
-          time: "1 hr ago",
-          text: "Reply to first comment.",
-          replies: [
-            {
-              id: 111,
-              user: "Rodrickjesferhadley",
-              time: "30 min ago",
-              text: "Nested reply to reply.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 2,
-      user: "Rodrickjesferhadley",
-      time: "1 hr ago",
-      text: "Second top-level comment.",
-    },
-  ];
-
-  const styles = {
-    thread: {
-      padding: "20px",
-      maxWidth: "700px",
-      margin: "auto",
-      fontFamily: "Arial, sans-serif",
-    },
-    comment: {
-      position: "relative",
-      paddingLeft: "50px",
-      marginBottom: "20px",
-    },
-    connector: {
-      position: "absolute",
-      top: "30px",
-      left: "20px",
-      width: "20px",
-      height: "20px",
-      borderLeft: "2px solid #ccc",
-      borderBottom: "2px solid #ccc",
-      borderRadius: "0 0 0 20px",
-    },
-    content: {
-      background: "#fff",
-      padding: "10px",
-      borderRadius: "8px",
-      boxShadow: "0 0 4px rgba(0,0,0,0.1)",
-    },
-    user: {
-      fontWeight: "bold",
-    },
-    time: {
-      fontSize: "12px",
-      color: "#999",
-      marginLeft: "5px",
-    },
-    text: {
-      margin: "8px 0",
-    },
-    actions: {
-      fontSize: "14px",
-      color: "#007bff",
-      cursor: "pointer",
-    },
-    likes: {
-      marginRight: "10px",
-    },
-    replies: {
-      marginLeft: "40px",
-      borderLeft: "2px solid #ccc",
-      paddingLeft: "20px",
-    },
-  };
-
-  const Comment = ({ comment }) => (
-    <div style={styles.comment}>
-      <div style={styles.connector} />
-      <div style={styles.content}>
-        <div style={styles.user}>
-          {comment.user}
-          <span style={styles.time}> — {comment.time}</span>
+  return (
+    <div className="comment-thread">
+      <div className="comment">
+        <div className="comment-content">
+          <img src="profile-pic.jpg" alt="Mahesh" className="avatar" />
+          <div className="comment-box">
+            <div className="user-name">Mahesh Patil</div>
+            <div className="comment-text">Mujhe yeh project bahut pasand aaya! Bohot sahi kaam kiya hai. 👏</div>
+            <div className="comment-actions">
+              <span>👍 95</span> <span>Reply</span>
+            </div>
+          </div>
         </div>
-        <div style={styles.text}>{comment.text}</div>
-        <div style={styles.actions}>
-          <span style={styles.likes}>❤️ 12</span> Reply
+
+        {/* Replies */}
+        <div className="replies">
+          <div className="line"></div>
+
+          {/* Reply 1 */}
+          <div className="reply">
+            <div className="comment-content">
+              <img src="profile-pic.jpg" alt="Vishruta" className="avatar" />
+              <div className="comment-box">
+                <div className="user-name">Vishruta Deshmukh</div>
+                <div className="comment-text">Haan Mahesh, main bhi kaafi impressed hoon! 🔥</div>
+                <div className="comment-actions">
+                  <span>👍 48</span> <span>Reply</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Nested Reply */}
+            <div className="replies">
+              <div className="line"></div>
+
+              <div className="reply">
+                <div className="comment-content">
+                  <img src="profile-pic.jpg" alt="Aarti" className="avatar" />
+                  <div className="comment-box">
+                    <div className="user-name">Aarti Sharma</div>
+                    <div className="comment-text">Same yaar! Itna clean design dekhke maza aa gaya. 😍</div>
+                    <div className="comment-actions">
+                      <span>👍 30</span> <span>Reply</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Another reply directly to Mahesh */}
+          <div className="reply">
+            <div className="comment-content">
+              <img src="profile-pic.jpg" alt="Aarti" className="avatar" />
+              <div className="comment-box">
+                <div className="user-name">Aarti Sharma</div>
+                <div className="comment-text">BTW koi GitHub link hai kya? Check karna tha. 🙌</div>
+                <div className="comment-actions">
+                  <span>👍 22</span> <span>Reply</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {comment.replies && comment.replies.length > 0 && (
-        <div style={styles.replies}>
-          {comment.replies.map((reply) => (
-            <Comment key={reply.id} comment={reply} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
+      {/* CSS Styling Inside Component */}
+      <style>{`
+        .comment-thread {
+          padding-left: 2rem;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  return (
-    <div style={styles.thread}>
-      {comments.map((comment) => (
-        <Comment key={comment.id} comment={comment} />
-      ))}
+        .comment {
+          position: relative;
+          margin-bottom: 2rem;
+        }
+
+        .comment-content {
+          display: flex;
+          align-items: flex-start;
+        }
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 9999px;
+          margin-right: 1rem;
+          background-color: #eee; /* fallback if image doesn't load */
+        }
+
+        .comment-box {
+          background: #fff;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1rem;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+          width: fit-content;
+        }
+
+        .user-name {
+          font-weight: bold;
+          font-size: 1rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .comment-text {
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .comment-actions {
+          display: flex;
+          gap: 1rem;
+          font-size: 0.85rem;
+          color: #555;
+          cursor: pointer;
+        }
+
+        .replies {
+          margin-left: 3rem;
+          position: relative;
+        }
+
+        .reply {
+          margin-top: 1rem;
+        }
+
+        .line {
+          position: absolute;
+          top: 0;
+          left: 1rem;
+          width: 2px;
+          height: 100%;
+          background-color: #ddd;
+        }
+      `}</style>
     </div>
   );
 };

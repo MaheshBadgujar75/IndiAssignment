@@ -94,7 +94,7 @@ export default function App() {
                 }
                 
                 body {
-                    font-family: 'Poppins', 'Roboto', sans-serif;
+                    font-family: 'Outfit', 'Montserrat', sans-serif;
                     line-height: 1.6;
                     color: #333;
                     background-color: #f8f9fa;
@@ -108,7 +108,7 @@ export default function App() {
                 
                 /* Header Styles */
                 header {
-                    background-color: #4a3f98;
+                    background-color: #17263c;
                     color: #fff;
                     padding: 1.2rem 5%;
                     display: flex;
@@ -145,14 +145,14 @@ export default function App() {
                     position: absolute;
                     width: 0;
                     height: 2px;
-                    background: #f77e53;
+                    background: #5cdb95;
                     left: 0;
                     bottom: -4px;
                     transition: width 0.3s ease;
                 }
                 
                 nav a:hover {
-                    color: #f77e53;
+                    color: #5cdb95;
                 }
                 
                 nav a:hover::after {
@@ -163,7 +163,7 @@ export default function App() {
                 .hero {
                     text-align: center;
                     padding: 7rem 1rem;
-                    background: linear-gradient(135deg, #4a3f98 0%, #f77e53 100%);
+                    background: linear-gradient(135deg, #17263c 0%, #3a7bd5 100%);
                     color: white;
                 }
                 
@@ -190,10 +190,10 @@ export default function App() {
                 
                 .hero button {
                     padding: 1rem 2.5rem;
-                    background: #f77e53;
+                    background: #5cdb95;
                     border: 2px solid white;
                     border-radius: 50px;
-                    color: white;
+                    color: #17263c;
                     font-size: 1.1rem;
                     font-weight: 600;
                     cursor: pointer;
@@ -203,7 +203,7 @@ export default function App() {
                 
                 .hero button:hover {
                     background: white;
-                    color: #f77e53;
+                    color: #3a7bd5;
                     transform: translateY(-3px);
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
                 }
@@ -218,7 +218,7 @@ export default function App() {
                     text-align: center;
                     font-size: 2.2rem;
                     margin-bottom: 3rem;
-                    color: #4a3f98;
+                    color: #17263c;
                     position: relative;
                 }
                 
@@ -227,7 +227,7 @@ export default function App() {
                     position: absolute;
                     width: 80px;
                     height: 4px;
-                    background: #f77e53;
+                    background: #5cdb95;
                     bottom: -10px;
                     left: 50%;
                     transform: translateX(-50%);
@@ -248,7 +248,7 @@ export default function App() {
                     padding: 2.5rem 2rem;
                     width: 320px;
                     border-radius: 12px;
-                    border-bottom: 4px solid #f77e53;
+                    border-bottom: 4px solid #5cdb95;
                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
                     transition: all 0.4s ease;
                     text-align: center;
@@ -265,7 +265,7 @@ export default function App() {
                 .card h3 {
                     margin-bottom: 1rem;
                     font-size: 1.5rem;
-                    color: #4a3f98;
+                    color: #17263c;
                 }
                 
                 .card p {
@@ -276,7 +276,7 @@ export default function App() {
                 
                 .card-link {
                     text-decoration: none;
-                    color: #f77e53;
+                    color: #3a7bd5;
                     font-weight: 600;
                     position: relative;
                     transition: all 0.3s ease;
@@ -287,7 +287,7 @@ export default function App() {
                     position: absolute;
                     width: 0;
                     height: 2px;
-                    background: #f77e53;
+                    background: #5cdb95;
                     left: 0;
                     bottom: -4px;
                     transition: width 0.3s ease;
@@ -304,7 +304,7 @@ export default function App() {
                 
                 /* CTA Section */
                 .cta-section {
-                    background: linear-gradient(135deg, #f77e53 0%, #4a3f98 100%);
+                    background: linear-gradient(135deg, #3a7bd5 0%, #17263c 100%);
                     color: white;
                     text-align: center;
                     padding: 5rem 1rem;
@@ -326,10 +326,10 @@ export default function App() {
                 
                 .cta-section button {
                     padding: 1rem 2.5rem;
-                    background: transparent;
+                    background: #5cdb95;
                     border: 2px solid white;
                     border-radius: 50px;
-                    color: white;
+                    color: #17263c;
                     font-size: 1.1rem;
                     font-weight: 600;
                     cursor: pointer;
@@ -339,14 +339,14 @@ export default function App() {
                 
                 .cta-section button:hover {
                     background: white;
-                    color: #f77e53;
+                    color: #3a7bd5;
                     transform: translateY(-3px);
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
                 }
                 
                 /* Footer Styles */
                 footer {
-                    background-color: #4a3f98;
+                    background-color: #17263c;
                     color: #fff;
                 }
                 
@@ -368,11 +368,11 @@ export default function App() {
                 .footer-logo h3 {
                     font-size: 1.5rem;
                     margin-bottom: 1rem;
-                    color: #f77e53;
+                    color: #5cdb95;
                 }
                 
                 .footer-logo p {
-                    color: #ddd;
+                    color: #e0e0e0;
                 }
                 
                 .footer-links {
@@ -386,32 +386,32 @@ export default function App() {
                 }
                 
                 .footer-column h4 {
-                    color: #f77e53;
+                    color: #5cdb95;
                     margin-bottom: 1.2rem;
                     font-size: 1.1rem;
                 }
                 
                 .footer-column a {
                     display: block;
-                    color: #ddd;
+                    color: #e0e0e0;
                     text-decoration: none;
                     margin-bottom: 0.7rem;
                     transition: color 0.3s ease;
                 }
                 
                 .footer-column a:hover {
-                    color: #f77e53;
+                    color: #5cdb95;
                 }
                 
                 .footer-column p {
-                    color: #ddd;
+                    color: #e0e0e0;
                     margin-bottom: 0.7rem;
                 }
                 
                 .footer-bottom {
                     text-align: center;
                     padding: 1.5rem;
-                    background-color: #3b3378;
+                    background-color: #0f1926;
                     font-size: 0.9rem;
                 }
                 

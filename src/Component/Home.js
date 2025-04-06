@@ -11,14 +11,14 @@ const CommentThread = () => {
         {
           id: 11,
           user: "Rodrickjesferhadley",
-          time: "2 hr ago",
-          text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.",
+          time: "1 hr ago",
+          text: "Reply to first comment.",
           replies: [
             {
               id: 111,
               user: "Rodrickjesferhadley",
-              time: "2 hr ago",
-              text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.",
+              time: "30 min ago",
+              text: "Nested reply to reply.",
             },
           ],
         },
@@ -27,55 +27,94 @@ const CommentThread = () => {
     {
       id: 2,
       user: "Rodrickjesferhadley",
-      time: "2 hr ago",
-      text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
+      time: "1 hr ago",
+      text: "Second top-level comment.",
     },
   ];
 
-  const Comment = ({ comment, level = 0 }) => (
-    <div className="relative flex pb-6">
-      {/* Line */}
-      <div className="flex flex-col items-center mr-4">
-        <img
-          src="https://via.placeholder.com/40"
-          alt="avatar"
-          className="rounded-full"
-        />
-        {comment.replies && comment.replies.length > 0 && (
-          <div className="flex-1 w-px bg-gray-300"></div>
-        )}
-      </div>
+  const styles = {
+    thread: {
+      padding: "20px",
+      maxWidth: "700px",
+      margin: "auto",
+      fontFamily: "Arial, sans-serif",
+    },
+    comment: {
+      position: "relative",
+      paddingLeft: "50px",
+      marginBottom: "20px",
+    },
+    connector: {
+      position: "absolute",
+      top: "30px",
+      left: "20px",
+      width: "20px",
+      height: "20px",
+      borderLeft: "2px solid #ccc",
+      borderBottom: "2px solid #ccc",
+      borderRadius: "0 0 0 20px",
+    },
+    content: {
+      background: "#fff",
+      padding: "10px",
+      borderRadius: "8px",
+      boxShadow: "0 0 4px rgba(0,0,0,0.1)",
+    },
+    user: {
+      fontWeight: "bold",
+    },
+    time: {
+      fontSize: "12px",
+      color: "#999",
+      marginLeft: "5px",
+    },
+    text: {
+      margin: "8px 0",
+    },
+    actions: {
+      fontSize: "14px",
+      color: "#007bff",
+      cursor: "pointer",
+    },
+    likes: {
+      marginRight: "10px",
+    },
+    replies: {
+      marginLeft: "40px",
+      borderLeft: "2px solid #ccc",
+      paddingLeft: "20px",
+    },
+  };
 
-      {/* Comment Box */}
-      <div className="flex-1">
-        <div className="bg-white p-3 rounded-md border">
-          <div className="font-semibold">{comment.user}</div>
-          <div className="text-xs text-gray-400 mb-2">{comment.time}</div>
-          <div className="text-gray-700 text-sm mb-2">{comment.text}</div>
-          <div className="flex items-center gap-2 text-blue-500 text-sm cursor-pointer">
-            <span>👍 38</span>
-            <span>Reply</span>
-          </div>
+  const Comment = ({ comment }) => (
+    <div style={styles.comment}>
+      <div style={styles.connector} />
+      <div style={styles.content}>
+        <div style={styles.user}>
+          {comment.user}
+          <span style={styles.time}> — {comment.time}</span>
         </div>
-
-        {/* Replies */}
-        {comment.replies &&
-          comment.replies.map((reply) => (
-            <div key={reply.id} className="ml-10 mt-6">
-              <Comment comment={reply} level={level + 1} />
-            </div>
-          ))}
+        <div style={styles.text}>{comment.text}</div>
+        <div style={styles.actions}>
+          <span style={styles.likes}>❤️ 12</span> Reply
+        </div>
       </div>
+
+      {comment.replies && comment.replies.length > 0 && (
+        <div style={styles.replies}>
+          {comment.replies.map((reply) => (
+            <Comment key={reply.id} comment={reply} />
+          ))}
+        </div>
+      )}
     </div>
   );
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <div className="max-w-2xl mx-auto">
-        {comments.map((comment) => (
-          <Comment key={comment.id} comment={comment} />
-        ))}
-      </div>
+    <div style={styles.thread}>
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
+      ))}
     </div>
   );
 };

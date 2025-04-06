@@ -80,7 +80,7 @@ export default function App() {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy;2025 SampleWebsite. All rights reserved.</p>
+                    <p>&copy;2025 MaheshBadgujar. All rights reserved.</p>
                 </div>
             </footer>
 
